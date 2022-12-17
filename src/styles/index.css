@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #fbebb5;
+  --primary-light: #faf4f4;
+  --dark-light: #9f9f9f;
+  --dark: #000000;
+
+  --fs-heading1: 64px;
+  --fs-heading3: 36px;
+  --fs-heading4: 24px;
+  --fs-base-lg: 20px;
+  --fs-base: 16px;
+
+  --lh-heading1: 96px;
+  --lh-heading3: 54px;
+  --lh-heading4: 36px;
+  --lh-base-lg: 30px;
+  --lh-base: 24px;
+}
+@media screen and (max-width: 767px) {
+  :root {
+    --fs-heading1: 36px;
+    --fs-heading3: 24px;
+    --fs-heading4: 20px;
+    --fs-base-lg: 16px;
+    --fs-base: 14px;
+
+    --lh-heading1: 54px;
+    --lh-heading3: 36px;
+    --lh-heading4: 30px;
+    --lh-base-lg: 24px;
+    --lh-base: 20px;
+  }
+}
+
+label {
+  @apply block;
+}
+input,
+textarea {
+  @apply border border-black p-2;
+}
+
+@layer base {
+  label {
+    @apply block;
+  }
+}
+
+body {
+  @apply font-poppins;
+}
+
+.underlined-link {
+  @apply relative border-b-2 border-black;
+}
+.underlined-link::after {
+  content: "";
+  @apply absolute w-0 h-0.5 -bottom-0.5 left-0 transition-all duration-300 ease-linear;
+}
+.underlined-link:hover::after {
+  @apply w-1/2;
+}
