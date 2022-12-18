@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "../../shared";
 
-const BlogsPage = () => {
+const BlogsPage = ({ datas, setDatas, id, setId }) => {
   const initialState = {
     title: "",
     subTitle: "",
@@ -10,8 +10,8 @@ const BlogsPage = () => {
   };
 
   const [values, setValues] = useState(initialState);
-  const [datas, setDatas] = useState([]);
-  const [id, setId] = useState(1);
+  // const [datas, setDatas] = useState([]);
+  // const [id, setId] = useState(1);
   const [isEdit, setIsEdit] = useState(false);
 
   const handleChange = (e) => {

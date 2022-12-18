@@ -1,11 +1,13 @@
 import Blogs from "./Blogs";
 import HeroSection from "./HeroSection";
 
-const HomePage = () => {
+// {datas: []}
+
+const HomePage = (props) => {
   return (
     <>
       <HeroSection />
-      <Blogs />
+      <Blogs datas={props.datas} />
     </>
   );
 };

@@ -2,7 +2,12 @@ import React from "react";
 import { BlogsCard } from "../../shared";
 import * as Images from "../../../assets/images";
 
-const Blogs = () => {
+//[] title: "", subTitle: "", description: "", author: ""
+
+//{datas: []}
+
+const Blogs = ({ datas }) => {
+  console.log(datas);
   return (
     <>
       <section className="py-20">
@@ -13,7 +18,16 @@ const Blogs = () => {
           </p>
           {/* Blogs Content */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <BlogsCard
+            {datas.map((data) => {
+              return (
+                <BlogsCard
+                  img={Images.Blog1Img}
+                  title={data.title}
+                  created_at={1669890923}
+                />
+              );
+            })}
+            {/* <BlogsCard
               img={Images.Blog1Img}
               title="Going all-in with millennial design"
               created_at={1669890923}
@@ -27,7 +41,7 @@ const Blogs = () => {
               img={Images.Blog3Img}
               title="Going all-in with millennial design"
               created_at="1669890923"
-            />
+            /> */}
           </div>
         </div>
       </section>
