@@ -27,7 +27,7 @@ const Blogs = ({ datas }) => {
                 />
               );
             })}
-            {/* <BlogsCard
+            <BlogsCard
               img={Images.Blog1Img}
               title="Going all-in with millennial design"
               created_at={1669890923}
@@ -41,7 +41,7 @@ const Blogs = ({ datas }) => {
               img={Images.Blog3Img}
               title="Going all-in with millennial design"
               created_at="1669890923"
-            /> */}
+            />
           </div>
         </div>
       </section>

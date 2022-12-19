@@ -3,6 +3,7 @@ import { Button } from "../../shared";
 
 const BlogsPage = ({ datas, setDatas, id, setId }) => {
   const initialState = {
+    file: "",
     title: "",
     subTitle: "",
     description: "",
@@ -47,6 +48,15 @@ const BlogsPage = ({ datas, setDatas, id, setId }) => {
       <div className="container">
         <div className="grid grid-cols-3 gap-4">
           <form onSubmit={(e) => handleSubmit(e)}>
+            <div className="">
+              <label>Image</label>
+              <input
+                type="file"
+                value={values.file}
+                name="file"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
             <div className="">
               <label>Title</label>
               <input
