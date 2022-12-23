@@ -60,6 +60,7 @@ const BlogsPage = ({ datas, setDatas, id, setId }) => {
             <div className="">
               <label>Title</label>
               <input
+                type="text"
                 value={values.title}
                 name="title"
                 onChange={(e) => handleChange(e)}
@@ -68,6 +69,7 @@ const BlogsPage = ({ datas, setDatas, id, setId }) => {
             <div className="">
               <label>Subtitle</label>
               <input
+                type="text"
                 value={values.subTitle}
                 name="subTitle"
                 onChange={(e) => handleChange(e)}
@@ -86,6 +88,7 @@ const BlogsPage = ({ datas, setDatas, id, setId }) => {
             <div className="mb-10">
               <label>Author</label>
               <input
+                type="text"
                 value={values.author}
                 name="author"
                 onChange={(e) => handleChange(e)}

@@ -41,15 +41,8 @@
 label {
   @apply block;
 }
-input,
-textarea {
-  @apply border border-black p-2;
-}
-
-@layer base {
-  label {
-    @apply block;
-  }
+input[type="text"] {
+  @apply border-2 border-green-500;
 }
 
 body {
