@@ -4,28 +4,17 @@ import Layout from "./components/layouts/Layout";
 import BlogsPage from "./components/pages/blogs";
 import HomePage from "./components/pages/home";
 import ShopPage from "./components/pages/shop";
-import axios from "axios";
+import { useEffect } from "react";
+import { fetchBlogsData } from "./components/services/blogs";
 
 const App = () => {
   const [datas, setDatas] = useState([]);
   const [id, setId] = useState(1);
 
-  const fetchData = async () => {
-    try {
-      const data = await axios.get(`http://localhost:5000/blogs`);
-      console.log(data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  fetchData();
-
-  const result = async () =>
-    await axios
-      .get(`http://localhost:5000/blogs`)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  result();
+  useEffect(() => {
+    //logics
+    fetchBlogsData(setDatas);
+  }, []);
 
   return (
     <>

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Button } from "../../shared";
+import { fetchBlogsData, postBlogsData } from "../../services/blogs";
 
-const BlogsPage = ({ datas, setDatas, id, setId }) => {
+const BlogsPage = ({ datas, setDatas, id }) => {
   const initialState = {
     file: "",
     title: "",
@@ -20,15 +21,22 @@ const BlogsPage = ({ datas, setDatas, id, setId }) => {
     setValues({ ...values, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (isEdit) {
       const newDatas = datas.filter((data) => data.id !== values.id);
       setDatas([...newDatas, values]);
       setIsEdit(false);
     } else {
-      setDatas([...datas, { id: id, ...values }]);
-      setId((id) => id + 1);
+      // setDatas([...datas, { id: id, ...values }]);
+
+      // Post method
+      postBlogsData(values);
+
+      //logics
+      fetchBlogsData(setDatas);
+
+      // setId((id) => id + 1);
     }
     setValues(initialState);
   };
