@@ -10,6 +10,7 @@ import { fetchBlogsData } from "./components/services/blogs";
 const App = () => {
   const [datas, setDatas] = useState([]);
   const [id, setId] = useState(1);
+  const [ids, setIds] = useState(1);
 
   useEffect(() => {
     //logics
